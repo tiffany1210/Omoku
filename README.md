@@ -1,8 +1,8 @@
 # Retro Game AI
-> AI implementation for retro games on OpenAI Gym and PyTorch. KSEA @ UC Berkeley
+> AI implementation for Gomoku using PyTorch and PyGame. KSEA @ UC Berkeley
 
 ## Prerequisites
-The primary code is written in Python 3, using OpenAI Gym and PyTorch
+The primary code is written in Python 3, using PyTorch and PyGame
 
 ## Contribute
 Please clone the Github Repository: 
