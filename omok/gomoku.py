@@ -4,7 +4,6 @@ from boardstate import *
 class Gomoku(object):
     def __init__(self, hparams):
         self.hparams = hparams
-        print(self.hparams)
         self.__chessMap = [
             [BoardState.EMPTY for j in range(self.hparams['board_size'])]
             for i in range(self.hparams['board_size'])
