@@ -12,15 +12,21 @@ def play(hparams):
     render = GameRender(gomoku, hparams)
 
     # change the AI here, bigger the depth stronger the AI
-    ai = gomokuAI(gomoku, BoardState.BLACK, 2)
-    second_ai = gomokuAI(gomoku, BoardState.WHITE, 1)
-
+    print('who plays first :', hparams['who_first'])
+    if hparams['who_first'] == 'ai' or hparams['who_first'] == 'AI':
+        print ("hi")
+        ai = gomokuAI(gomoku, BoardState.BLACK, 2)
+        second_ai = gomokuAI(gomoku, BoardState.WHITE, 1)
+    else:
+        ai = gomokuAI(gomoku, BoardState.WHITE, 2)
+        second_ai = gomokuAI(gomoku, BoardState.BLACK, 1)
     result = BoardState.EMPTY
 
     # AI plays first
-    ai.first_step()
-    result = gomoku.get_chess_result()
-    render.change_state()
+    if hparams['who_first'] == 'ai' or hparams['who_first'] == 'AI':
+        ai.first_step()
+        result = gomoku.get_chess_result()
+        render.change_state()
 
     while True:
         if hparams['enable_second_ai']:
@@ -55,10 +61,10 @@ def play(hparams):
                     render.change_state()
             else:
                 continue
-        render.draw_chess()
+        render.draw_chess() # updating the board in the respect of render. render reflecting the gomoku board matrix
         render.draw_mouse()
 
-        if result != BoardState.EMPTY:
+        if result != BoardState.EMPTY: # if 1 or 2 then one of them win, put up the game over sign on screen.
             render.draw_result(result)
 
         pygame.display.update()

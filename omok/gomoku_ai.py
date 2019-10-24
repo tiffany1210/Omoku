@@ -287,7 +287,7 @@ class gomokuAI(object):
 
     def first_step(self):
         # AI plays in the center
-        self.__gomoku.set_chessboard_state(7, 7, self.__currentState)
+        self.__gomoku.set_chessboard_state(7, 7, self.__currentState) #7,7 is the center of the board of size 15
         return True
 
     def one_step(self):

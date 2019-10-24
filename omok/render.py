@@ -12,11 +12,11 @@ PIECE = 32
 
 
 class GameRender(object):
-    def __init__(self, gomoku, hparams):
+    def __init__(self, gomoku, hparams): # takes in gomoku object and hparams (who first, boardsize, ai1, ai2)
         self.hparams = hparams
         self.GRID = (WIDTH - 2 * MARGIN) / (self.hparams['board_size'] - 1)
         self.__gomoku = gomoku
-        self.__currentPieceState = BoardState.BLACK
+        self.__currentPieceState = BoardState.BLACK # initial condition. black attacks first in gomoku.
         pygame.init()
         self.__screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
         pygame.display.set_caption('Gomoku AI')
@@ -79,8 +79,7 @@ class GameRender(object):
             (i, j) = self.coordinate_transform_pixel2map(x, y)
 
         if not i is None and not j is None:
-            if self.__gomoku.get_chessboard_state(i, j) \
-                != BoardState.EMPTY:
+            if self.__gomoku.get_chessboard_state(i, j) != BoardState.EMPTY: #already placed
                 return False
             else:
                 self.__gomoku.set_chessboard_state(i, j,
