@@ -1,7 +1,7 @@
 import pygame
 from omok.boardstate import *
 
-IMAGE_PATH = 'img/'
+IMAGE_PATH = 'omok/img/'
 WIDTH = 540
 HEIGHT = 540
 MARGIN = 22
