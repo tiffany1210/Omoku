@@ -13,7 +13,7 @@ def play(hparams):
 
     # change the AI here, bigger the depth stronger the AI
     ai = gomokuAI(gomoku, BoardState.BLACK, 2)
-    second_ai = gomokuAI(gomoku, BoardState.WHITE, 1)
+    second_ai = gomokuAI(gomoku, BoardState.WHITE, 2)
 
     result = BoardState.EMPTY
 

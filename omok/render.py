@@ -5,9 +5,9 @@ from gomoku import Gomoku
 
 IMAGE_PATH = 'img/'
 
-WIDTH = 540
-HEIGHT = 540
-MARGIN = 22
+WIDTH = 810
+HEIGHT = 810
+MARGIN = 33
 PIECE = 32
 
 
