@@ -26,10 +26,10 @@ test_data/
 
 #python
 .pyc
+__pycache__/
 
 # pytype
 .pytype
 
 # vscode sftp settings
 .vscode/sftp.json
-
